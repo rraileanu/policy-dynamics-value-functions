@@ -1,0 +1,4 @@
+gym==0.15.7
+opencv-python==4.2.0.34
+mujoco-py==2.0.2.10
+torch==1.5.1
