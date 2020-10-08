@@ -410,7 +410,7 @@ class EnvSamplerPDVF():
                 .reshape(self.enc_input_size, 1)
 
         res = {'next_state': next_state_tensor, 'action': action_tensor, 'sa_tensor': state_action_tensor,
-               'sas_tensor': sas_tensor, 'reward': reward, 'done': done}
+               'sas_tensor': sas_tensor.to(self.args.device), 'reward': reward, 'done': done}
         return res
 
     def sample_env_context(self, policy_fn, env_idx=None):

@@ -269,7 +269,7 @@ def train_pdvf():
             total_eval_loss += eval_loss
             if eval_loss < BEST_EVAL_LOSS:
                 BEST_EVAL_LOSS = eval_loss
-                utils.save_model("pdvf-stage0.", value_net, optimizer, \
+                pdvf_utils.save_model("pdvf-stage0.", value_net, optimizer, \
                                 i, args, args.env_name, save_dir=args.save_dir_pdvf)
 
         if i % args.log_interval == 0:
@@ -294,7 +294,7 @@ def train_pdvf():
         
             if decoder_eval_loss < DECODER_BEST_EVAL_LOSS:
                 DECODER_BEST_EVAL_LOSS = decoder_eval_loss
-                utils.save_model("policy-decoder-stage0.", policy_decoder, decoder_optimizer, \
+                pdvf_utils.save_model("policy-decoder-stage0.", policy_decoder, decoder_optimizer, \
                                 i, args, args.env_name, save_dir=args.save_dir_pdvf)
         
         if i % args.log_interval == 0:
@@ -482,7 +482,7 @@ def train_pdvf():
             
                 if eval_loss < BEST_EVAL_LOSS:
                     BEST_EVAL_LOSS = eval_loss
-                    utils.save_model("pdvf-stage{}.".format(k+1), value_net, optimizer, \
+                    pdvf_utils.save_model("pdvf-stage{}.".format(k+1), value_net, optimizer, \
                                     i, args, args.env_name, save_dir=args.save_dir_pdvf)
 
             if i % args.log_interval == 0:
@@ -507,7 +507,7 @@ def train_pdvf():
             
                 if decoder_eval_loss < DECODER_BEST_EVAL_LOSS:
                     DECODER_BEST_EVAL_LOSS = decoder_eval_loss
-                    utils.save_model("policy-decoder-stage{}.".format(k+1), policy_decoder, decoder_optimizer, \
+                    pdvf_utils.save_model("policy-decoder-stage{}.".format(k+1), policy_decoder, decoder_optimizer, \
                                     i, args, args.env_name, save_dir=args.save_dir_pdvf)
 
             if i % args.log_interval == 0:
